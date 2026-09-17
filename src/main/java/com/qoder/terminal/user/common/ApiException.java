@@ -2,7 +2,7 @@ package com.qoder.terminal.user.common;
 
 import org.springframework.http.HttpStatus;
 
-/** 业务错误，统一映射为 {"code","message"} 响应。 */
+/** Business error mapped to a {"code","message"} response. */
 public class ApiException extends RuntimeException {
 
     private final HttpStatus status;

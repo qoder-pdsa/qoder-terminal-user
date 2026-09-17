@@ -1,6 +1,6 @@
 package com.qoder.terminal.user.activity;
 
-/** 用户行为类型：执行命令、ASK 提问、打开面板。 */
+/** User activity types: running a command, asking via ASK, opening a panel. */
 public enum ActivityType {
     COMMAND,
     ASK,

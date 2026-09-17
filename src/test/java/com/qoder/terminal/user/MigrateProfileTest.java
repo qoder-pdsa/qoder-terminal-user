@@ -11,8 +11,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 
 /**
- * `make db-migrate` / AutoWonder QA 数据库步骤使用 migrate profile：
- * 只需要数据库连接即可完成迁移，不得依赖 JWT 私钥、邀请码等业务配置。
+ * `make db-migrate` and the AutoWonder QA database steps use the migrate profile:
+ * migrations need only a database connection and must not depend on business config such as the JWT key or invite code.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @ActiveProfiles("migrate")

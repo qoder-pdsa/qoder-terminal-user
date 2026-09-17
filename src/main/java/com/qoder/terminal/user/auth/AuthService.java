@@ -60,7 +60,7 @@ public class AuthService {
         return users.findByUsername(req.username())
                 .filter(user -> passwords.matches(req.password(), user.getPasswordHash()))
                 .map(this::tokenFor)
-                // 用户不存在与密码错误返回相同错误，避免枚举账号
+                // Unknown users and wrong passwords return the same error to prevent account enumeration
                 .orElseThrow(() -> new ApiException(
                         HttpStatus.UNAUTHORIZED, "invalid_credentials", "invalid username or password"));
     }

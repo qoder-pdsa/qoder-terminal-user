@@ -11,7 +11,7 @@ public final class AuthDtos {
 
     public record RegisterRequest(
             @NotBlank String inviteCode,
-            @NotBlank @Pattern(regexp = "^[a-z0-9_]{3,32}$", message = "3-32 位小写字母、数字或下划线") String username,
+            @NotBlank @Pattern(regexp = "^[a-z0-9_]{3,32}$", message = "3-32 lowercase letters, digits, or underscores") String username,
             @NotBlank @Size(min = 8, max = 72) String password,
             @NotBlank @Size(max = 100) String displayName) {}
 
