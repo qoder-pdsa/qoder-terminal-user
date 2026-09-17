@@ -113,7 +113,7 @@ class UserServiceIntegrationTest {
         String alice = register(uniqueName());
         String bob = register(uniqueName());
 
-        for (String content : new String[] {"700 Q", "ASK 对比腾讯和阿里"}) {
+        for (String content : new String[] {"700 Q", "ASK compare Tencent and Alibaba"}) {
             String type = content.startsWith("ASK") ? "ASK" : "COMMAND";
             mvc.perform(post("/v1/activities").header("Authorization", "Bearer " + alice)
                             .contentType(MediaType.APPLICATION_JSON)

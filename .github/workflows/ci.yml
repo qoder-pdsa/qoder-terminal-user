@@ -9,5 +9,5 @@ jobs:
         with: { distribution: temurin, java-version: "25", cache: maven }
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      # 集成测试通过 Testcontainers 使用 runner 自带的 Docker
+      # Integration tests use the runner's built-in Docker via Testcontainers
       - run: make lint test JAVA_HOME=$JAVA_HOME

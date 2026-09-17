@@ -4,7 +4,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** 与其他 Qoder Terminal 服务一致的健康检查入口。 */
+/** Health check endpoint consistent with the other Qoder Terminal services. */
 @RestController
 public class HealthController {
 

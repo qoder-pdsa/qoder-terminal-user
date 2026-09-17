@@ -3,7 +3,7 @@ trigger: glob
 paths:
   - "**/*.java"
 ---
-- 按功能分包（`auth`、`user`、`activity`），不按 controller/service 分层分包。
-- 构造器注入；DTO 用 `record`；实体不直接返回给客户端。
-- 业务错误抛 `ApiException`，由 `ApiExceptionHandler` 统一转换为 `{"code","message"}`。
-- 集成测试用 Testcontainers 的真实 PostgreSQL，不用 H2。
+- Package by feature (`auth`, `user`, `activity`), not by controller/service layers.
+- Use constructor injection; DTOs are `record`s; never return entities directly to clients.
+- Throw `ApiException` for business errors; `ApiExceptionHandler` converts them to `{"code","message"}`.
+- Integration tests use a real PostgreSQL via Testcontainers, never H2.

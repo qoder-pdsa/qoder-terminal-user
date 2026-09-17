@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-/** 当前用户的行为记录。用户只能读写自己的记录（user_id 取自 token，而非请求体）。 */
+/** Activity history of the current user. Users can only read and write their own records (user_id comes from the token, not the request body). */
 @RestController
 @Validated
 public class ActivityController {

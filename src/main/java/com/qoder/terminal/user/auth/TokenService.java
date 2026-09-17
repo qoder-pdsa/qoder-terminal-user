@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 
-/** 签发 RS256 访问令牌；data / analyst 通过 /.well-known/jwks.json 验签。 */
+/** Issues RS256 access tokens; data / analyst verify them via /.well-known/jwks.json. */
 @Service
 public class TokenService {
 

@@ -1,13 +1,13 @@
 # qoder-terminal-user
 
-Qoder Terminal 的**用户服务**（Java 25 + Spring Boot 4）：邀请制注册、登录、签发 JWT、记录用户行为。
-接口契约：[`api/openapi.yaml`](api/openapi.yaml)。
+The **user service** (Java 25 + Spring Boot 4) for Qoder Terminal: invite-only registration, login, JWT issuing, and user activity history.
+API contract: [`api/openapi.yaml`](api/openapi.yaml).
 
 ```bash
-make db-up        # 本地 PostgreSQL 容器
-make db-migrate   # 执行 Flyway 迁移（服务启动时不会自动迁移）
-make dev          # :8084，临时签名密钥，邀请码 demo-invite
-make test         # 单元 + 集成测试（Testcontainers，需要 Docker）
+make db-up        # local PostgreSQL container
+make db-migrate   # run Flyway migrations (the service never migrates on startup)
+make dev          # :8084, ephemeral signing key, invite code demo-invite
+make test         # unit + integration tests (Testcontainers, requires Docker)
 make lint
 ```
 
@@ -17,15 +17,15 @@ curl -X POST localhost:8084/v1/auth/register -H 'content-type: application/json'
 curl localhost:8084/v1/me -H "Authorization: Bearer <accessToken>"
 ```
 
-## 能力
-| 能力 | 状态 |
+## Capabilities
+| Capability | Status |
 |---|---|
-| 邀请码注册、登录（BCrypt） | ✅ |
+| Invite-code registration and login (BCrypt) | ✅ |
 | RS256 JWT + `/.well-known/jwks.json` | ✅ |
 | `/v1/me` | ✅ |
-| 行为记录：命令 / ASK / 打开面板 | ✅ |
-| data / analyst 验签、web 登录页 | 🚧 backlog BL-09 |
-| refresh token、登录限流、管理员接口 | 🚧 backlog |
+| Activity history: commands / ASK / panel opens | ✅ |
+| Token verification in data / analyst and a web login page | 🚧 backlog BL-09 |
+| Refresh tokens, login rate limiting, admin APIs | 🚧 backlog |
 
-## 数据库
-PostgreSQL，独占 `qoder_user` schema；迁移脚本在 `src/main/resources/db/migration/`。
+## Database
+PostgreSQL with the `qoder_user` schema owned exclusively by this service; migration scripts live in `src/main/resources/db/migration/`.

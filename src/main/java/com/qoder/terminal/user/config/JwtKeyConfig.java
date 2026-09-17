@@ -22,7 +22,7 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 
-/** RSA 签名密钥：生产从环境变量读取 PEM，本地开发可生成临时密钥。 */
+/** RSA signing key: read from a PEM environment variable in production; local development may generate an ephemeral key. */
 @Configuration
 public class JwtKeyConfig {
 
